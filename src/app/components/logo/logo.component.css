@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.redes{    
+    margin-right: 0.5em;
+}
+
+#logoAP{
+    width: 115px;
+    margin-left: 0.5em;
+}
+
+img{
+    width: 40px;
+    padding: 0.5em;
+}

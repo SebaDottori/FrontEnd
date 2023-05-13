@@ -9,7 +9,7 @@ import { LoginUsuario } from '../model/login-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://backendhsdi.onrender.com/auth/';
 
   constructor(private HttpCLient: HttpClient) { }
 

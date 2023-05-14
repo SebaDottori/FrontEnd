@@ -1,0 +1,10 @@
+.container{
+    padding: 20px;
+}
+
+@media (min-width: 0px) {
+    #fotodeperfil{
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+    }
+}

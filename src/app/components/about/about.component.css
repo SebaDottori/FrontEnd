@@ -14,6 +14,12 @@ div{
     }
 }
 
+.descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #Nombre{
     font-size: x-large;
     font-weight: bold;

@@ -18,11 +18,6 @@
                     <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="proyecto.descripcion" required>
                 </div>
                 <br>
-                <div class="form-group">
-                    <label for="img">Imagen del proyecto</label>
-                    <input type="file" class="form-control" id="img" name="img" [(ngModel)]="proyecto.img" (change)="uploadProyectoImg($event)" accept=".jpg, .jpeg, .png">
-                </div>
-                <br>
                 <div class="d-flex justify-content-between align-items-end mb-2">
                     <button class="btn btn-success">Actualizar proyecto</button>
                     <a href="/" class="btn btn-secondary al">Cancelar</a>

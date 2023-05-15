@@ -5,7 +5,7 @@
 .container{
     width: auto;
 }
-.parte1,.parte2{
+.parte1{
     display: inline-block;
     text-align: justify;
 }

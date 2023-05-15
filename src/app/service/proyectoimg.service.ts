@@ -5,21 +5,21 @@ import { __await } from 'tslib';
 @Injectable({
   providedIn: 'root'
 })
-export class ImageService {
+export class ProyectoImgService {
   url: string = "";
 
   constructor(private storage: Storage) { }
   
   public uploadImage($event: any, name: String) {
     const file = $event.target.files[0];
-    const imgRef = ref(this.storage, 'imagen/' + name);
+    const imgRef = ref(this.storage, 'proyectoImg/' + name);
     uploadBytes(imgRef, file)
     .then(response => {this.getImages()})
     .catch(error => console.log(error));
   }
 
   getImages() {
-    const imageRef = ref(this.storage, 'imagen');
+    const imageRef = ref(this.storage, 'proyectoImg');
     list(imageRef)
     .then(async (response) => {
       for(let item of response.items){

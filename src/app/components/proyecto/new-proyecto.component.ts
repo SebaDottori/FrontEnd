@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
-import { ImageService } from 'src/app/service/image.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import { ProyectoImgService } from 'src/app/service/proyectoimg.service';
 
 @Component({
   selector: 'app-new-proyecto',
@@ -15,14 +15,14 @@ export class NewProyectoComponent implements OnInit{
   link: string;
   img: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private sProyecto: ProyectoService, private router: Router, public imageService: ImageService) {}
+  constructor(private activatedRoute: ActivatedRoute, private sProyecto: ProyectoService, private router: Router, public proyectoImgService: ProyectoImgService) {}
 
   ngOnInit(): void {
     
   }
 
   onCreate(): void{
-    const proyecto = new Proyecto(this.nombre, this.descripcion, this.link, this.imageService.url);
+    const proyecto = new Proyecto(this.nombre, this.descripcion, this.link, this.proyectoImgService.url);
     this.sProyecto.save(proyecto).subscribe(
       data => {
         alert("Proyecto añadido correctamente");
@@ -37,7 +37,7 @@ export class NewProyectoComponent implements OnInit{
   uploadProyectoImg($event:any) {
     const id = this.activatedRoute.snapshot.params['id'];
     const name = "proyecto_" + this.nombre;
-    this.imageService.uploadProyectoImg($event, name)
+    this.proyectoImgService.uploadImage($event, name)
   }
 
 }

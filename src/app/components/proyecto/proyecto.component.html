@@ -8,20 +8,16 @@
     
     <div class="col-lg 1"></div>
     <div class="col-lg-11 parte1">
-        <table class="table">
+        <table class="table" *ngFor="let Proyecto of proyecto">
             <tbody>
-                <tr *ngFor="let Proyecto of proyecto">
-                    <td>
-                        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-                            <h3>{{Proyecto.nombre}}</h3>
-                            <a href="{{Proyecto.link}}" target="_blank">{{Proyecto.link}}</a>
-                            <h6>{{Proyecto.descripcion}}</h6>
-                        </div>
+                <tr>
+                    <td class="col-sm-12 col-md-7 col-lg-7 parte1">
+                        <h3>{{Proyecto.nombre}}</h3>
+                        {{Proyecto.link}}
                     </td>
-                    <td>
-                        <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
-                            <img src="{{Proyecto.img}}" class="img-fluid img-proyecto" id="fotodeperfil">
-                        </div>
+                    <td>{{Proyecto.descripcion}}</td>
+                    <td class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">
+                       <img src="{{Proyecto.img}}" class="img-proyecto">
                     </td>
                     <td *ngIf="isLogged"><button class="btn btn-outline-dark btn-sm" routerLink="/editproyecto/{{Proyecto.id}}"><i class="bi bi-pencil"></i></button></td>
                     <td *ngIf="isLogged"><button class="btn btn-outline-danger btn-sm" (click)="delete(Proyecto.id)"><i class="bi bi-trash"></i></button></td>

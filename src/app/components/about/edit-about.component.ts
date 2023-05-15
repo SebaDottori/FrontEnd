@@ -31,6 +31,7 @@ export class EditAboutComponent implements OnInit{
     this.persona.img = this.imageService.url;
     this.personaService.update(id, this.persona).subscribe(
       data => {
+        alert("Información personal modificada correctamente");
         this.router.navigate(['']);
       }, err => {
         alert("Error al editar información personal");

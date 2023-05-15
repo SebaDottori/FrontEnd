@@ -33,6 +33,7 @@ export class EditEducacionComponent {
     const id = this.activatedRouter.snapshot.params['id'];
     this.educacionS.update(id, this.educacion).subscribe(
       data => {
+        alert("Educacion modificada correctamente");
         this.router.navigate(['']);
       }, err => {
         alert("Error al modificar la educación");

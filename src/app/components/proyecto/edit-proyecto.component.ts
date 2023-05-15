@@ -30,7 +30,7 @@ export class EditProyectoComponent {
     const id = this.activatedRoute.snapshot.params['id'];
     this.sProyecto.update(id, this.proyecto).subscribe(
       data => {
-        alert("Proyecto añadido correctamente");
+        alert("Proyecto modificado correctamente");
         this.router.navigate(['']);
       }, err => {
         alert("Falló");
